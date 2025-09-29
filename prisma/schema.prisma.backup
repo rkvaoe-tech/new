@@ -1,0 +1,191 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model app_user {
+  id               String           @id
+  email            String           @unique
+  display_name     String?
+  role             String           @default("USER")
+  created_at       DateTime         @default(now())
+  is_blocked       Boolean          @default(false)
+  last_login_at    DateTime?
+  updated_at       DateTime
+  binom_api_key    String?
+  google_sheets_id String?
+  password_hash    String
+  audit_log        audit_log[]
+  domain           domain[]
+  domain_request   domain_request[]
+}
+
+model audit_log {
+  id         String    @id
+  actor_id   String?
+  action     String
+  entity     String
+  entity_id  String
+  diff       Json
+  created_at DateTime  @default(now())
+  app_user   app_user? @relation(fields: [actor_id], references: [id])
+
+  @@index([created_at])
+}
+
+model domain {
+  id              String           @id
+  domain          String           @unique
+  is_assigned     Boolean          @default(false)
+  assigned_to     String?
+  assigned_at     DateTime?
+  created_at      DateTime         @default(now())
+  updated_at      DateTime
+  archived_at     DateTime?
+  is_archived     Boolean          @default(false)
+  note            String?
+  binom_domain_id String?
+  cost            Decimal?         @db.Decimal(10, 2)
+  app_user        app_user?        @relation(fields: [assigned_to], references: [id])
+  domain_request  domain_request[]
+
+  @@index([assigned_to, is_archived])
+  @@index([is_assigned])
+}
+
+model domain_request {
+  id         String                @id
+  user_id    String
+  domain_id  String?
+  status     domain_request_status @default(pending)
+  comment    String?
+  created_at DateTime              @default(now())
+  updated_at DateTime
+  domain     domain?               @relation(fields: [domain_id], references: [id])
+  app_user   app_user              @relation(fields: [user_id], references: [id])
+
+  @@index([status])
+  @@index([user_id, status])
+}
+
+model geo {
+  id         String   @id
+  code       String   @unique
+  name       String
+  is_active  Boolean  @default(true)
+  ord        Int      @default(0)
+  created_at DateTime @default(now())
+  updated_at DateTime
+
+  @@index([is_active, ord])
+}
+
+model landing {
+  id           String       @id
+  offer_id     String
+  ext_id       Int?
+  label        String
+  type         landing_type
+  locale       String
+  network_code String?
+  url          String
+  notes        String?
+  ord          Int          @default(0)
+  created_at   DateTime     @default(now())
+  updated_at   DateTime
+  offer        offer        @relation(fields: [offer_id], references: [id], onDelete: Cascade)
+
+  @@unique([offer_id, type, ext_id])
+  @@index([locale])
+  @@index([network_code])
+  @@index([offer_id, type, ord])
+}
+
+model language {
+  id         String   @id
+  code       String   @unique
+  name       String
+  is_active  Boolean  @default(true)
+  ord        Int      @default(0)
+  created_at DateTime @default(now())
+  updated_at DateTime
+
+  @@index([is_active, ord])
+}
+
+model offer {
+  id         String       @id
+  vertical   String
+  title      String
+  price_usd  Int
+  geo        String[]     @default([])
+  tags       String[]     @default([])
+  status     offer_status @default(paused)
+  image_url  String       @default("")
+  ord        Int          @default(0)
+  created_at DateTime     @default(now())
+  updated_at DateTime
+  landing    landing[]
+
+  @@index([geo])
+  @@index([ord])
+  @@index([status])
+  @@index([tags])
+}
+
+model offer_type {
+  id          String   @id
+  name        String   @unique
+  description String?
+  is_active   Boolean  @default(true)
+  ord         Int      @default(0)
+  created_at  DateTime @default(now())
+  updated_at  DateTime
+
+  @@index([is_active, ord])
+}
+
+model partner {
+  id         String   @id
+  code       String   @unique
+  name       String
+  is_active  Boolean  @default(true)
+  ord        Int      @default(0)
+  created_at DateTime @default(now())
+  updated_at DateTime
+
+  @@index([is_active, ord])
+}
+
+model vertical {
+  id          String   @id
+  name        String   @unique
+  description String?
+  is_active   Boolean  @default(true)
+  ord         Int      @default(0)
+  created_at  DateTime @default(now())
+  updated_at  DateTime
+
+  @@index([is_active, ord])
+}
+
+enum domain_request_status {
+  pending
+  approved
+  rejected
+}
+
+enum landing_type {
+  landing
+  prelanding
+}
+
+enum offer_status {
+  active
+  paused
+  archived
+}

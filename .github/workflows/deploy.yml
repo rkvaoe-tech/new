@@ -1,0 +1,77 @@
+name: Deploy Admin Panel
+
+on:
+  push:
+    branches: [ main, production ]
+  workflow_dispatch:
+
+env:
+  NODE_ENV: production
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci --only=production
+    
+    - name: Install build dependencies
+      run: npm install --save-dev @tailwindcss/postcss tailwindcss typescript
+    
+    - name: Build application
+      run: |
+        NODE_OPTIONS="--max-old-space-size=2048" npm run build
+      env:
+        NODE_ENV: production
+    
+    - name: Create deployment archive
+      run: |
+        tar -czf admin-build-$(date +%Y%m%d_%H%M%S).tar.gz \
+          .next \
+          package.json \
+          package-lock.json \
+          public \
+          next.config.js \
+          ecosystem.config.js \
+          deploy.sh \
+          src/middleware.ts
+        
+        # Создаем также архив с текущим именем для скрипта
+        cp admin-build-*.tar.gz admin-build.tar.gz
+    
+    - name: Deploy to server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "admin-build.tar.gz"
+        target: "/root/admin/"
+        timeout: 300s
+    
+    - name: Execute deployment
+      uses: appleboy/ssh-action@v0.1.11
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        timeout: 300s
+        script: |
+          cd /root/admin
+          chmod +x deploy.sh
+          ./deploy.sh admin-build.tar.gz
+          
+          # Проверяем статус приложения
+          sleep 5
+          pm2 status admin-panel
+          curl -f http://localhost:3000 || echo "Warning: App not responding on localhost:3000"

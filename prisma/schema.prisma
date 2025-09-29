@@ -1,0 +1,217 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AppUser {
+  id              String          @id @default(uuid())
+  email           String          @unique
+  displayName     String?         @map("display_name")
+  passwordHash    String          @map("password_hash")
+  role            String          @default("USER")
+  isBlocked       Boolean         @default(false) @map("is_blocked")
+  createdAt       DateTime        @default(now()) @map("created_at")
+  updatedAt       DateTime        @updatedAt @map("updated_at")
+  lastLoginAt     DateTime?       @map("last_login_at")
+  
+  // User integration settings
+  binomApiKey     String?         @map("binom_api_key")
+  googleSheetsId  String?         @map("google_sheets_id")
+  
+  auditLogs       AuditLog[]
+  assignedDomains Domain[]
+  domainRequests  DomainRequest[]
+
+  @@map("app_user")
+}
+
+model Offer {
+  id        String      @id @default(uuid())
+  vertical  String
+  title     String
+  priceUsd  Int         @map("price_usd")
+  geo       String[]    @default([])
+  tags      String[]    @default([])
+  status    OfferStatus @default(PAUSED)
+  imageUrl  String      @default("") @map("image_url")
+  order     Int         @default(0) @map("ord")
+  createdAt DateTime    @default(now()) @map("created_at")
+  updatedAt DateTime    @updatedAt @map("updated_at")
+  landings  Landing[]
+
+  @@index([status])
+  @@index([order])
+  @@index([geo])
+  @@index([tags])
+  @@map("offer")
+}
+
+model Landing {
+  id          String      @id @default(uuid())
+  offerId     String      @map("offer_id")
+  extId       Int?        @map("ext_id")
+  label       String
+  type        LandingType
+  locale      String
+  networkCode String?     @map("network_code")
+  url         String
+  notes       String?
+  order       Int         @default(0) @map("ord")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+  offer       Offer       @relation(fields: [offerId], references: [id], onDelete: Cascade)
+
+  @@unique([offerId, type, extId], name: "uq_landing_ext_per_offer")
+  @@index([offerId, type, order])
+  @@index([networkCode])
+  @@index([locale])
+  @@map("landing")
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  actorId   String?  @map("actor_id")
+  action    String
+  entity    String
+  entityId  String   @map("entity_id")
+  diff      Json
+  createdAt DateTime @default(now()) @map("created_at")
+  actor     AppUser? @relation(fields: [actorId], references: [id])
+
+  @@index([createdAt])
+  @@map("audit_log")
+}
+
+model Vertical {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  isActive    Boolean  @default(true) @map("is_active")
+  order       Int      @default(0) @map("ord")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, order])
+  @@map("vertical")
+}
+
+model OfferType {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  isActive    Boolean  @default(true) @map("is_active")
+  order       Int      @default(0) @map("ord")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, order])
+  @@map("offer_type")
+}
+
+model Geo {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  name      String
+  isActive  Boolean  @default(true) @map("is_active")
+  order     Int      @default(0) @map("ord")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, order])
+  @@map("geo")
+}
+
+model Language {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  name      String
+  isActive  Boolean  @default(true) @map("is_active")
+  order     Int      @default(0) @map("ord")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, order])
+  @@map("language")
+}
+
+model Partner {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  name      String
+  isActive  Boolean  @default(true) @map("is_active")
+  order     Int      @default(0) @map("ord")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive, order])
+  @@map("partner")
+}
+
+model Domain {
+  id         String          @id @default(cuid())
+  domain     String          @unique
+  isAssigned Boolean         @default(false) @map("is_assigned")
+  assignedTo String?         @map("assigned_to")
+  assignedAt DateTime?       @map("assigned_at")
+  createdAt  DateTime        @default(now()) @map("created_at")
+  updatedAt  DateTime        @updatedAt @map("updated_at")
+  archivedAt DateTime?       @map("archived_at")
+  isArchived Boolean         @default(false) @map("is_archived")
+  note       String?         // Заметка пользователя к домену
+  
+  // Binom integration
+  binomDomainId String?      @map("binom_domain_id")
+  
+  // Domain cost (set by admin)
+  cost       Decimal?        @map("cost") @db.Decimal(10,2)
+  
+  user       AppUser?        @relation(fields: [assignedTo], references: [id])
+  requests   DomainRequest[]
+
+  @@index([isAssigned])
+  @@index([assignedTo, isArchived])
+  @@map("domain")
+}
+
+model DomainRequest {
+  id        String              @id @default(cuid())
+  userId    String              @map("user_id")
+  domainId  String?             @map("domain_id")
+  status    DomainRequestStatus @default(PENDING)
+  comment   String?
+  createdAt DateTime            @default(now()) @map("created_at")
+  updatedAt DateTime            @updatedAt @map("updated_at")
+  domain    Domain?             @relation(fields: [domainId], references: [id])
+  user      AppUser             @relation(fields: [userId], references: [id])
+
+  @@index([userId, status])
+  @@index([status])
+  @@map("domain_request")
+}
+
+enum OfferStatus {
+  ACTIVE   @map("active")
+  PAUSED   @map("paused")
+  ARCHIVED @map("archived")
+
+  @@map("offer_status")
+}
+
+enum LandingType {
+  LANDING    @map("landing")
+  PRELANDING @map("prelanding")
+
+  @@map("landing_type")
+}
+
+enum DomainRequestStatus {
+  PENDING  @map("pending")
+  APPROVED @map("approved")
+  REJECTED @map("rejected")
+
+  @@map("domain_request_status")
+}

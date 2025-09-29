@@ -1,0 +1,517 @@
+
+> admin@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.2 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://101.99.76.38:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in 1507ms
+ ✓ Ready in 4.1s
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 5.5s
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.9i5ljzpwv7s'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.9i5ljzpwv7s'
+}
+ ○ Compiling /_not-found/page ...
+ ✓ Compiled /_not-found/page in 13.7s
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.l2g056mxfp'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.l2g056mxfp'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.s6he1o965qr'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.s6he1o965qr'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.hvi4yomszi'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.hvi4yomszi'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.s08tgyftpsp'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.s08tgyftpsp'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.9agzh5mxs2c'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.9agzh5mxs2c'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.ebw9wo0mjtj'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.ebw9wo0mjtj'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.l44zi5qnpus'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.l44zi5qnpus'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.b1o9h8i36jq'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.b1o9h8i36jq'
+}
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 2.4s
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.02b2fi3ti92e'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.02b2fi3ti92e'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.a4h7hkbxzqa'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.a4h7hkbxzqa'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.02b2fi3ti92e'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.02b2fi3ti92e'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.h0yl2usq58s'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.h0yl2usq58s'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.1n70z7u6ow3'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.1n70z7u6ow3'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.7icj9vodwze'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.7icj9vodwze'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.u31okt9svfr'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.u31okt9svfr'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/static/development/_buildManifest.js.tmp.0o1hegab3l5m'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/static/development/_buildManifest.js.tmp.0o1hegab3l5m'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: Cannot find module '/root/admin/.next/server/middleware-manifest.json'
+Require stack:
+- /root/admin/node_modules/next/dist/server/next-server.js
+- /root/admin/node_modules/next/dist/server/dev/next-dev-server.js
+- /root/admin/node_modules/next/dist/server/next.js
+- /root/admin/node_modules/next/dist/server/lib/start-server.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/root/admin/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/root/admin/.next/server/pages/_app/build-manifest.json'
+}
