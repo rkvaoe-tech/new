@@ -176,4 +176,4 @@ npm run db:reset     # Сброс базы данных
 
 ## 📄 Лицензия
 
-MIT
+MIT# Admin Panel Auto-Deploy Test
