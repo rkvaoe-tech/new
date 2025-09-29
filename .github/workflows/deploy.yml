@@ -20,7 +20,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
     
     - name: Clear npm cache
       run: npm cache clean --force
@@ -29,6 +28,7 @@ jobs:
       run: |
         rm -rf node_modules package-lock.json
         npm install
+        npm ls tailwindcss || echo "TailwindCSS not found!"
     
     - name: Build application
       run: |
